@@ -6,6 +6,105 @@
  * @return {object} `calculator` object that can be used
  */
 
+ var calculatorModule = function(){
+
+
+    var memory = 0;
+    var total = 0;
+
+    return{
+
+      load: function(n){
+
+        if(typeof n !== 'number'){
+
+          return 'Error';
+        }
+        total = n;
+        return total;
+
+      },
+
+      getTotal: function(){
+        return total;
+
+      },
+
+      add: function(n){
+        
+        total = this.getTotal() + n;
+        memory = total;
+        return total;
+
+      },
+
+      subtract: function(n){
+
+          if(typeof n !== 'number'){
+
+          return 'Error';
+        }
+        total = this.getTotal() - n;
+        memory = total;
+        return total;
+      },
+
+      multiply: function(n){
+
+          if(typeof n !== 'number'){
+
+          return 'Error';
+        }
+        
+        total = this.getTotal() * n;
+        memory = total;
+        return total;
+
+      },
+
+      divide: function(n){
+          if(typeof n !== 'number'){
+
+          return 'Error';
+        }
+        total = this.getTotal() / n;
+        memory = total;
+        return total;
+
+      },
+
+      recallMemory: function(){
+
+        return memory;
+
+      },
+
+      saveMemory: function(n){
+
+        memory = total;
+        return n;
+
+
+      },
+
+      clearMemory: function(){
+
+        memory = 0;
+      }
+
+
+
+
+
+
+    };
+
+
+
+
+ }
+
+
 
   /**
    * sets the `total` to the number passed in
