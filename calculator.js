@@ -7,7 +7,7 @@
  */
 
 
- var calculatorModule = function(){
+ var Calculator = (function(){
 
 
     var memory = 0;
@@ -30,8 +30,6 @@
       }
 
     }
-
-
     
     return{
 
@@ -124,8 +122,7 @@
 
       memory = 0;
       
-    }
-
+    })();
 
 
     };
